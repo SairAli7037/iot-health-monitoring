@@ -40,8 +40,9 @@ export default function Dashboard() {
   const fetchData = async () => {
     try {
     //   const res = await axios.get("http://127.0.0.1:8000/api/latest-data/")
-    const res = await axios.get("http://10.40.99.35:8000/api/latest-data/")
-      setData(res.data)
+    // const res = await axios.get("http://10.40.99.35:8000/api/latest-data/")
+    const res = await axios.get("http://iot-health-backend-sair-cmfdc3ddgzg8haf7.centralindia-01.azurewebsites.net/api/latest-data/")
+    setData(res.data)
     } catch (err) {
       console.error(err)
     } finally {
@@ -51,7 +52,7 @@ export default function Dashboard() {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get("http://10.40.99.35:8000/api/history/")
+      const res = await axios.get("http://iot-health-backend-sair-cmfdc3ddgzg8haf7.centralindia-01.azurewebsites.net/api/history/")
       setHistory(res.data)
     } catch (err) {
       console.error(err)
