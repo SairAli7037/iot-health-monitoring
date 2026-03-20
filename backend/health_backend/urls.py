@@ -16,9 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.http import HttpResponse
 
+def home(request):
+    return HttpResponse("🚀 IoT Healthcare Backend is LIVE!")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('sensors.urls')),
+    path('', home),
 ]
