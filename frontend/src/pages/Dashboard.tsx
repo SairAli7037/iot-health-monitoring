@@ -52,6 +52,7 @@ export default function Dashboard() {
 
   const fetchHistory = async () => {
     try {
+      //  const res = await axios.get("http://10.40.99.35:8000/api/history/")
       const res = await axios.get("http://iot-health-backend-sair-cmfdc3ddgzg8haf7.centralindia-01.azurewebsites.net/api/history/")
       setHistory(res.data)
     } catch (err) {
