@@ -28,6 +28,9 @@ SECRET_KEY = 'django-insecure-zuup#0jczuo0=tsn=d+)j2@c8d61pnlfwh!*jimd*&&u(_r5d3
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
 
 
 # Application definition
