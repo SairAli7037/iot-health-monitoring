@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'health_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'iotadmin',
-        'PASSWORD': 'Io@12345',
-        'HOST': 'iot-health-db.postgres.database.azure.com',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
         'PORT': '5432',
         'OPTIONS': {
             'sslmode': 'require',
