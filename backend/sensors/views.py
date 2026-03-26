@@ -1,5 +1,7 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+import random
+from datetime import datetime
 import json
 
 from .models import SensorData
@@ -69,3 +71,22 @@ def sensor_history(request):
         })
 
     return JsonResponse(history, safe=False)
+
+
+
+
+def insert_dummy(request):
+    for i in range(20):
+        bpm = random.randint(70, 100)
+
+        SensorData.objects.create(
+            bpm=bpm,
+            bpm_avg=bpm - random.randint(0, 5),
+            ir=random.randint(50000, 100000),
+            ds18b20_temp=36.5,
+            dht11_temp=28.0,
+            humidity=55,
+            timestamp=datetime.now()
+        )
+
+    return JsonResponse({"status": "dummy data inserted"})
