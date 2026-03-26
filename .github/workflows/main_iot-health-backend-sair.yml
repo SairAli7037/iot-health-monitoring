@@ -63,4 +63,4 @@ jobs:
           app-name: 'iot-health-backend-sair'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EB9A21AFB4F84003923E03EDF320EDFE }}
-          package: backend
+          package: .
