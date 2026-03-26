@@ -81,8 +81,8 @@ WSGI_APPLICATION = 'health_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-if os.environ.get("WEBSITE_HOSTNAME"):  # Azure environment
-    DATABASES = {
+
+DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': os.environ.get('DB_NAME'),
@@ -95,13 +95,7 @@ if os.environ.get("WEBSITE_HOSTNAME"):  # Azure environment
             },
         }
     }
-else:  # Local environment
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+
 
 
 # Password validation
