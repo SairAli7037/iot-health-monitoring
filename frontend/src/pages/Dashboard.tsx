@@ -32,7 +32,7 @@ export default function Dashboard() {
 
   const [data, setData] = useState<SensorData | null>(null)
   const [history, setHistory] = useState<SensorData[]>([])
-  const [showConfig, setShowConfig] = useState(false)
+  const [showConfig] = useState(false)
   const [ssid, setSsid] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(true)
@@ -131,7 +131,7 @@ export default function Dashboard() {
 
       </div>
 
-      {showConfig && (
+      {showConfig &&(
         <Card className="mb-6">
           <CardHeader>
             <CardTitle>Configure Sensor WiFi (UI only)</CardTitle>
