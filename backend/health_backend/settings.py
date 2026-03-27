@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'health_backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
-
+print("DEBUG ENV:", dict(os.environ))  # TEMP DEBUG
 
 DATABASES = {
         'default': {
@@ -135,5 +135,3 @@ STATIC_URL = 'static/'
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
-
-print("FINAL DATABASE CONFIG:", DATABASES)
